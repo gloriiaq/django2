@@ -1,4 +1,4 @@
-"""static1 URL Configuration
+"""static2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from appstatic import views
+from app02 import views
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('abcd',views.home, name='home'),
+    #path('',views.home, name='home'),
+    path('app02/', include('app02.urls'))
 ]
